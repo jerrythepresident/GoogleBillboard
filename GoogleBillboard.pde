@@ -22,21 +22,13 @@ public void draw()
 }  
 public boolean isPrime(double dNum)  
 {   
-
-  if (dNum <= 1) {
-            return false;
-        }
-        if (dNum == 2 || dNum == 3) {
-            return true;
-        }
-        if (dNum % 2 == 0) {
-            return false;
-        }
-
-        for (int i = 3; i * i <= dNum; i += 2) {
-            if (dNum % i == 0) {
-                return false;
-            }
-        }
-        return true;
+  if (dNum<2){
+    return false;
+  }
+  for(int i=2; i<=Math.sqrt(dNum); i++){
+    if(dNum%i==0){
+  return false;
+  }
+  }
+  return true;
 } 
