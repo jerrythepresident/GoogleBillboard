@@ -42,7 +42,7 @@ public boolean isPrime(double dNum){
 
 public boolean digitSumEquals(double dNum, int targetSum) {
     double sum = 0;
-    for (int i = 0; i < 10; i++) {
+    while (dNum > 0) {
         sum = sum + dNum % 10;
             dNum = dNum / 10;
     }
