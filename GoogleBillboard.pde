@@ -4,9 +4,9 @@ public void setup(){
   int consecutiveDigits = 10;
   int startIndex = 1;
   boolean primeFound = false;
-  int sum49 = 0;
+  int sum49 = 1;
 
-while ((!primeFound && sum49 <= 5) && startIndex + consecutiveDigits <= e.length()) {
+while ((!primeFound || sum49 <= 6) && startIndex + consecutiveDigits <= e.length()) {
         String substring = e.substring(startIndex, startIndex + consecutiveDigits);
         double parsedDouble = Double.parseDouble(substring);
         
@@ -16,7 +16,7 @@ while ((!primeFound && sum49 <= 5) && startIndex + consecutiveDigits <= e.length
               } 
               
 if (digitSumEquals(substring, 49)) {
-    System.out.println("Sum of digits equals 49: " + substring);
+    System.out.println("Sum of digits equals 49: " + substring + " "+ sum49 +"th one");
     sum49++;
 }
 
