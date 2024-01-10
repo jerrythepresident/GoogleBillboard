@@ -4,6 +4,8 @@ public void setup(){
 	int consecutiveDigits = 10;
 	int startIndex = 1;
 	boolean primeFound = false;
+	boolean sumOfDigitsFound = false;
+
 	while (!primeFound && startIndex + consecutiveDigits <= e.length()) {
 		String substring = e.substring(startIndex, startIndex + consecutiveDigits);
 		double parsedDouble = Double.parseDouble(substring);
