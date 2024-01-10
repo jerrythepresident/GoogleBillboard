@@ -6,7 +6,7 @@ public void setup(){
   boolean primeFound = false;
   int sum49 = 0;
 
-    while ((!primeFound && sum49 < 5) && startIndex + consecutiveDigits <= e.length()) {
+while ((!primeFound && sum49 <= 5) && startIndex + consecutiveDigits <= e.length()) {
         String substring = e.substring(startIndex, startIndex + consecutiveDigits);
         double parsedDouble = Double.parseDouble(substring);
         
@@ -15,14 +15,15 @@ public void setup(){
                   primeFound = true;
               } 
               
-     if (digitSumEquals(parsedDouble, 49)) {
-            System.out.println("Sum of digits equals 49: " + substring);
-            sum49++;
-        }
+if (digitSumEquals(substring, 49)) {
+    System.out.println("Sum of digits equals 49: " + substring);
+    sum49++;
+}
 
               startIndex++;
         }
 }  
+
 public void draw()  
 {   
   //not needed for this assignment
@@ -40,11 +41,10 @@ public boolean isPrime(double dNum){
   return true;
 } 
 
-public boolean digitSumEquals(double dNum, int targetSum) {
-    double sum = 0;
-    while (dNum > 0) {
-        sum = sum + dNum % 10;
-            dNum = dNum / 10;
+public boolean digitSumEquals(String substring, int targetSum) {
+    int sum = 0;
+    for (int i = 0; i < substring.length(); i++) {
+        sum += Character.getNumericValue(substring.charAt(i));
     }
     return sum == targetSum;
 }
