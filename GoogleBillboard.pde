@@ -34,7 +34,7 @@ public void draw()
   //not needed for this assignment
 }  
 
-public boolean isPrime(double dNum){   
+public static boolean isPrime(double dNum){   
   if (dNum<2){
     return false;
   }
@@ -46,7 +46,7 @@ public boolean isPrime(double dNum){
   return true;
 } 
 
-public boolean digitSumEquals(String substring, int targetSum) {
+public static boolean digitSumEquals(String substring, int targetSum) {
     int sum = 0;
     for (int i = 0; i < substring.length(); i++) {
         sum += Character.getNumericValue(substring.charAt(i));
